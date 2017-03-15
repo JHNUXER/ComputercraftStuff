@@ -16,7 +16,12 @@ local function cd(d)
 	return shell.dir()
 end
 
-local function draw
+local function draw()
+	for i = 1,#finalList do
+	  local text = finalList[i]
+	  if i == index then text = "> "..text else text = "  "..text end
+	end
+end
 
 local function getKeyPress() local _,k,h = os.pullEvent("key") local key = keys.getName(k) if key == "shift" then shifted = true break else return key end
 local function moveIndex(k)
